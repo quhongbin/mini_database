@@ -19,7 +19,7 @@ pub mod init {
     pub enum Operator {
         #[command(about = "set data for mini_database ( default 10M UTF-8 )")]
         Set {
-            #[arg(long)]
+            #[arg(long, default_value = "10")]
             memory: u16,
             #[arg(long, default_value = "UTF-8")]
             charactor: String,
@@ -31,9 +31,9 @@ pub mod init {
         },
         /// set data for mini_database
         Remove {
-            #[arg(short, long)]
+            #[arg(long)]
             remove_key: String,
-            #[arg(short, long)]
+            #[arg(long)]
             remove_value: String,
         },
     }

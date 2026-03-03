@@ -9,16 +9,17 @@ fn main() {
             init::Operator::Set { memory, charactor } => {
                 println!("{},{}", memory, charactor)
             }
-            init::Operator::Get { get_key: st } => {
-                println!("{}", st)
+            init::Operator::Get { get_key } => {
+                println!("{}", get_key)
             }
             init::Operator::Remove {
-                remove_key: st,
-                remove_value: test,
+                remove_key,
+                remove_value,
             } => {
-                println!("{},{}", st, test)
+                println!("{}:{}", remove_key, remove_value)
             }
         },
         None => println!("error occur"),
     }
 }
+
